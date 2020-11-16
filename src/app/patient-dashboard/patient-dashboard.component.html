@@ -1,0 +1,87 @@
+<html>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="row">
+<div class="col-md-3">
+<div class="card" style="width: 20rem;">
+  <img src="../assets/images/user.png" class="card-img-top" class="align-content-center">
+  <div class="card-body">
+    <h5 class="card-title"><b>Welcome Your Patient Id is: {{id}}</b></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a (click)="editProfileClicked()">Edit Profile</a></li>
+    <li class="list-group-item">Create Appointment</li>
+    <li class="list-group-item">View Previous Appointment</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
+<div class="col-md-9">
+  <div *ngIf="this.isfalse">
+    <form #updateDetails = "ngForm" >
+    <div class="container">
+      <div class="view-account">
+        <section class="module">
+            <div class="content-panel">
+              <form class="form-horizontal">
+                <fieldset class="fieldset">
+                  <h3 class="fieldset-title">Personal Info</h3>
+<!--                  <div class="form-group">-->
+<!--                    <label class="col-md-2 col-sm-3 col-xs-12 control-label" >Id:</label>-->
+<!--                    <div class="col-md-10 col-sm-9 col-xs-12">-->
+<!--                      <input type="text" class="form-control"  name="id" [(ngModel)]="id" required="required" oninvalid="this.setCustomValidity('id is required')">-->
+<!--                    </div>-->
+<!--                  </div>-->
+                  <div class="form-group">
+                    <label class="col-md-2 col-sm-3 col-xs-12 control-label" >First Name</label>
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                      <input type="text" class="form-control"  name="firstName" [(ngModel)]="updatedDetails.firstName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last Name</label>
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                      <input type="text" class="form-control"  name="Last name" [(ngModel)]="updatedDetails.lastName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Password</label>
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                      <input type="password" class="form-control" name="password" [(ngModel)]="updatedDetails.password">
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                  <h3 class="fieldset-title">Contact Info</h3>
+                  <div class="form-group">
+                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Mobile Number</label>
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                      <input type="email" class="form-control"  name="contact number" [(ngModel)]="updatedDetails.contactNumber">
+                      <p class="help-block">This is the email </p>
+                    </div>
+                  </div>
+                </fieldset>
+                <hr>
+                  <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                    <button class="btn btn-primary" type="submit" name="update profile" (click)="updateDetailsPatient()" >Update Profile</button>
+                  </div>
+                <h3 style="text-align: center ; color: #0072ff">{{message}}</h3>
+              </form>
+            </div>
+        </section>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+</body>
+</html>

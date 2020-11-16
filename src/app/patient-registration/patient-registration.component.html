@@ -1,0 +1,91 @@
+
+<html>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+<div class="row">
+  <div class="col-md-2"></div>
+<div class="col-md-6">
+<form #patientRegistrationForm =  "ngForm" (ngSubmit)="registerPatient(patientRegistrationForm.value)" >
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+      <p>Patient Registration Form</p>
+    </div>
+
+    <div class="form-content">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="form-group">
+            <input type="text" name="firstName"   [(ngModel)]="patient.firstName" class="form-control" placeholder="firstname *"/>
+          </div>
+          <div class="form-group">
+            <input type="text" name="lastName"   [(ngModel)]="patient.lastName" class="form-control" placeholder="Lastname *"/>
+          </div>
+          <div class="form-group">
+            <input type="text" name="username"   [(ngModel)]="patient.username" class="form-control" placeholder="Username *"/>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" [(ngModel)]="patient.email" class="form-control" placeholder="Email *" />
+          </div>
+          <div class="form-group">
+            <input type="date" name="dob" [(ngModel)]="patient.dob" class="form-control" placeholder="Date of Birth *" />
+          </div>
+          <div class="form-group">
+            <input type="text" name="city"   [(ngModel)]="patient.city" class="form-control" placeholder="City *"/>
+          </div>
+          <div class="form-group">
+            <input type="text" name="state"   [(ngModel)]="patient.state" class="form-control" placeholder="state *"/>
+          </div>
+          <div class="form-group">
+            <input type="text" name="country"   [(ngModel)]="patient.country" class="form-control" placeholder="country *"/>
+          </div>
+          <div class="form-group">
+            <input type="text" name="contactNumber"   [(ngModel)]="patient.contactNumber" class="form-control" placeholder="ContactNumber *"/>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" [(ngModel)]="patient.password" class="form-control" placeholder="Your Password *" />
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btnSubmit" >Submit</button>
+    </div>
+  </div>
+</div>
+</form>
+<h2 style="text-align: center ; color: #0072ff">{{message}}</h2>
+</div>
+<div class="col-md-4">
+  <form #patientLoginForm = "ngForm" (ngSubmit)="loginPatient(patientLoginForm.value)">
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Patient Login Form </p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <input type="text" name="Username"   [(ngModel)]="patientLoginData.username" class="form-control" placeholder="username *"/>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" [(ngModel)]="patientLoginData.password" class="form-control" placeholder="Your Password *" />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit" name="Login" >Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+<a routerLink="//show-patients" style="text-align: center" routerLinkActive="active">get all patients</a>
+</body>
+</html>
